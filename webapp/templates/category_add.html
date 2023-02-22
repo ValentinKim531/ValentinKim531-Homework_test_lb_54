@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Category add{% endblock %}
+
+{% block content %}
+<form action="{% url 'category_add' %}" method="post">
+    {% csrf_token %}
+    <h1 class="title">Add category</h1>
+    <div class="mb-2">
+        <label for="title" class="form-label"></label>
+        <input required type="text" class="form-control" name="title" id="title" placeholder="Title">
+    </div>
+    <div class="mb-2">
+        <label required for="description" class="form-label"></label>
+        <textarea class="form-control" name="description" id="description" rows="3"
+            placeholder="Description"></textarea>
+    </div>
+    <button type="submit" class="btn btn-success">Add category</button>
+</form>
+{% endblock %}
